@@ -1,0 +1,40 @@
+.TH "usbrelay" 1 "24 Jan 2022" "usbrelay"
+.SH NAME
+usbrelay \- control or query USB HID relays
+
+.SH SYNOPSIS
+.B usbrelay
+[OPTION...]
+[ACTION...]
+
+.SH DESCRIPTION
+.B usbrelay
+allows for querying and setting the state of USB HID electrical relays.
+If no ACTION is passed, the state of all relays is printed to stdout.
+RELID_N=[0|1] sets the N-th relay on module RELID to off or on. 
+
+Multiple actions can be performed with one command
+
+eg:
+
+usbrelay REL0A_1=0 REL0A_2=1 REL0B_2=0...
+
+The Relay module ID can be changed on DCTTECH relays:
+RELID_0=NEWID sets the relay RELID to NEWID
+
+.SH OPTIONS
+.TP
+.BR \-d ", " \-\-debug
+Produce debugging output
+.TP
+.BR \-q ", " \-\-quiet
+Suppress output
+.TP
+.BR \-? ", " \-\-help
+Print the help menu
+.TP
+.BR \-\-usage
+Print a usage description
+.TP
+.BR \-V ", " \-\-version
+Print the program version
